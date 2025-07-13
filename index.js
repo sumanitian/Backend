@@ -65,7 +65,7 @@
 //     }
 // })
 
-app.listen(3000);
+// app.listen(3000);
 
 const express = require("express");
 const jwt = require("jsonwebtoken");
@@ -76,6 +76,9 @@ const app = express();
 app.use(express.json());
 
 const users = [];
+app.get("/", function(req, res) {
+    res.sendFile(__dirname + "/public/index.html");
+})
 
 app.post("/signup", function (req, res) {
     const username = req.body.username
